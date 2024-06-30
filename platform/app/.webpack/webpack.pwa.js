@@ -148,24 +148,10 @@ module.exports = (env, argv) => {
       // https: true,
       open: true,
       port: OHIF_PORT,
+      static: { watch: false },
       client: {
         overlay: { errors: true, warnings: false },
       },
-      proxy: {
-        '/dicomweb': 'http://localhost:5000',
-      },
-      static: [
-        {
-          directory: '../../testdata',
-          staticOptions: {
-            extensions: ['gz', 'br', 'mht'],
-            index: ['index.json.gz', 'index.mht.gz'],
-            redirect: true,
-            setHeaders,
-          },
-          publicPath: '/viewer-testdata',
-        },
-      ],
       //public: 'http://localhost:' + 3000,
       //writeToDisk: true,
       historyApiFallback: {
