@@ -13,6 +13,7 @@ window.config = {
   experimentalStudyBrowserSort: false,
   strictZSpacingForVolumeViewport: true,
   groupEnabledModesFirst: true,
+  investigationalUseDialog: { option: 'never' },
   maxNumRequests: { interaction: 100, thumbnail: 75, prefetch: 25 },
   defaultDataSourceName: 'orthanc01',
   dataSources: [
