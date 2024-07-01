@@ -11,14 +11,7 @@
           "test:e2e",
           "test:e2e:local",
           "test:e2e:dist",
-          "test:e2e:serve",
-          "build:viewer",
-          "build:dev",
-          "build:aws",
-          "build:viewer:ci",
-          "build:viewer:qa",
-          "build:viewer:demo",
-          "build"
+          "test:e2e:serve"
         ]
       }
     }

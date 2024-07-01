@@ -85,6 +85,11 @@ function createDicomWebApi(dicomWebConfig, servicesManager) {
         if (authHeaders && authHeaders.Authorization) {
           xhrRequestHeaders.Authorization = authHeaders.Authorization;
         }
+        const repositoryItem = localStorage.getItem('X-Repository');
+        const repository = repositoryItem !== null ? JSON.parse(repositoryItem) : {};
+        if (repository.id) {
+          xhrRequestHeaders['X-Repository-Id'] = repository.id;
+        }
         return xhrRequestHeaders;
       };
 
@@ -397,7 +402,6 @@ function createDicomWebApi(dicomWebConfig, servicesManager) {
             fixBulkDataURI(value, naturalized, dicomWebConfig);
             // Provide a method to fetch bulkdata
             value.retrieveBulkData = (options = {}) => {
-
               const { mediaType } = options;
               const useOptions = {
                 // The bulkdata fetches work with either multipart or

@@ -23,9 +23,9 @@ window.config = {
       configuration: {
         friendlyName: 'Foliage Orthanc 01',
         name: 'foliage-orthanc-01',
-        wadoUriRoot: 'https://portal.cecdat.dev:9103/dicom-web',
-        qidoRoot: 'https://portal.cecdat.dev:9103/dicom-web',
-        wadoRoot: 'https://portal.cecdat.dev:9103/dicom-web',
+        wadoUriRoot: '/api/gateway/orthanc/dicom-web',
+        qidoRoot: '/api/gateway/orthanc/dicom-web',
+        wadoRoot: '/api/gateway/orthanc/dicom-web',
         qidoSupportsIncludeField: false,
         imageRendering: 'wadors',
         thumbnailRendering: 'wadors',

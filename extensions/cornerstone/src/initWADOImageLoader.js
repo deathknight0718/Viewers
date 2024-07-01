@@ -69,7 +69,6 @@ export default function initWADOImageLoader(
         sourceConfig.requestTransferSyntaxUID,
         sourceConfig.omitQuotationForMultipartRequest
       );
-
       const xhrRequestHeaders = {
         Accept: acceptHeader,
       };
@@ -77,7 +76,11 @@ export default function initWADOImageLoader(
       if (headers) {
         Object.assign(xhrRequestHeaders, headers);
       }
-
+      const repositoryItem = localStorage.getItem('X-Repository');
+      const repository = repositoryItem !== null ? JSON.parse(repositoryItem) : {};
+      if (repository.id) {
+        xhrRequestHeaders['X-Repository-Id'] = repository.id;
+      }
       return xhrRequestHeaders;
     },
     errorInterceptor: error => {

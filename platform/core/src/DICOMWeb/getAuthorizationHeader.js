@@ -13,6 +13,12 @@ import user from '../user';
 export default function getAuthorizationHeader({ requestOptions } = {}, user) {
   const headers = {};
 
+  const repositoryItem = localStorage.getItem('X-Repository');
+  const repository = repositoryItem !== null ? JSON.parse(repositoryItem) : {};
+  if (repository.id) {
+    headers['X-Repository-Id'] = repository.id;
+  }
+
   // Check for OHIF.user since this can also be run on the server
   const accessToken = user && user.getAccessToken && user.getAccessToken();
 
